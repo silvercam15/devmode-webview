@@ -11,6 +11,7 @@ require("./styles.css");
 function SpanCardComponent(data) {
     var start = new Date(data.data.start_time * 1000);
     var end = new Date(data.data.end_time * 1000);
+    var duration = new Date(data.data.end_time - data.data.start_time * 1000);
     return (React.createElement(Card_1["default"], { sx: { minWidth: 275 } },
         React.createElement("div", { className: 'card' },
             React.createElement("div", null,
@@ -18,11 +19,13 @@ function SpanCardComponent(data) {
                 React.createElement("div", { className: 'cardTimes' },
                     React.createElement(Typography_1["default"], { sx: { fontSize: 14 }, color: "text.secondary", gutterBottom: true },
                         "Start: ",
-                        start.toString()),
+                        start.toTimeString()),
                     React.createElement(Typography_1["default"], { sx: { fontSize: 14 }, color: "text.secondary", gutterBottom: true },
                         "End: ",
-                        end.toString()),
-                    React.createElement(Typography_1["default"], { sx: { fontSize: 14 }, color: "text.secondary", gutterBottom: true }, "Duration:")),
+                        end.toTimeString()),
+                    React.createElement(Typography_1["default"], { sx: { fontSize: 14 }, color: "text.secondary", gutterBottom: true },
+                        "Duration: ",
+                        duration.toTimeString())),
                 React.createElement(Typography_1["default"], { sx: { mb: 1.5 }, color: "text.secondary" },
                     "trace id: ",
                     data.data.trace_id),
@@ -33,7 +36,7 @@ function SpanCardComponent(data) {
                     "parent: ",
                     data.data.parent_id)),
             React.createElement("div", { className: 'accordion' },
-                data.data.resource_attributes && React.createElement(Accordion_1["default"], null,
+                data.data.attributes && React.createElement(Accordion_1["default"], null,
                     React.createElement(AccordionSummary_1["default"], { expandIcon: React.createElement(ExpandMore_1["default"], null), "aria-controls": "panel1a-content", id: "panel1a-header" },
                         React.createElement(Typography_1["default"], null, "Attributes")),
                     React.createElement(AccordionDetails_1["default"], null,

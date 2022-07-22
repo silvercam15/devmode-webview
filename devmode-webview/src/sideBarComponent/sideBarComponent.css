@@ -44,6 +44,7 @@ body {
 
   .filter {
       margin-bottom: 20px;
+      margin-right:15px;
   }
   
   @media screen and (max-width: 700px) {

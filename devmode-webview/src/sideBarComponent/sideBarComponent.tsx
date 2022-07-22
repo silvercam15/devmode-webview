@@ -22,7 +22,7 @@ testData.map((data:any)=> (
   <Button variant="contained">Refresh</Button>
   <h3>Filters</h3>
   <TextField label="Trace id" variant="filled" color="success" focused className="filter" />
-  <TextField label="Parent id" variant="filled" color="success" focused />
+  <TextField label="Parent id" variant="filled" color="success" focused className="filter"/>
   </div>
 
 </div>

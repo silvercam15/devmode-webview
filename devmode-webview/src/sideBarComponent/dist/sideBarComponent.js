@@ -17,6 +17,6 @@ function SideBarComponent() {
             React.createElement(material_1.Button, { variant: "contained" }, "Refresh"),
             React.createElement("h3", null, "Filters"),
             React.createElement(material_1.TextField, { label: "Trace id", variant: "filled", color: "success", focused: true, className: "filter" }),
-            React.createElement(material_1.TextField, { label: "Parent id", variant: "filled", color: "success", focused: true }))));
+            React.createElement(material_1.TextField, { label: "Parent id", variant: "filled", color: "success", focused: true, className: "filter" }))));
 }
 exports["default"] = SideBarComponent;

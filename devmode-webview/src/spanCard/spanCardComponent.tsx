@@ -11,6 +11,7 @@ import './styles.css'
 export default function SpanCardComponent(data:any) {
     const start = new Date(data.data.start_time * 1000)
     const end = new Date(data.data.end_time * 1000)
+    const duration = new Date(data.data.end_time - data.data.start_time * 1000)
   return (
     <Card sx={{ minWidth: 275 }}>
     <div className='card'>
@@ -20,13 +21,13 @@ export default function SpanCardComponent(data:any) {
             </Typography>
           <div className='cardTimes'>
             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            Start: {start.toString()}
+            Start: {start.toTimeString()}
             </Typography>
             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            End: {end.toString()}
+            End: {end.toTimeString()}
             </Typography>
             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            Duration:
+            Duration: {duration.toTimeString()}
             </Typography>
         </div>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
@@ -40,7 +41,7 @@ export default function SpanCardComponent(data:any) {
           </Typography>
       </div>
     <div className='accordion'>
-      {data.data.resource_attributes && <Accordion>
+      {data.data.attributes && <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"

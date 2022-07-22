@@ -1,6 +1,8 @@
 .cardTimes {
     display: flex;
     flex-direction: row;
+    border-bottom: 1px gray;
+    margin-bottom:10px;
 }
 
 .card {
