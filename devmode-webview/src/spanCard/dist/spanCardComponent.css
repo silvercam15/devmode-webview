@@ -1,0 +1,4 @@
+.cardTimes {
+    display: flex;
+    flex-direction: row;
+}
