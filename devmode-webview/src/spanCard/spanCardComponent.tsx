@@ -9,16 +9,17 @@ import './styles.css'
 
 
 export default function SpanCardComponent(data:any) {
-    const start = new Date(data.data.start_time * 1000)
-    const end = new Date(data.data.end_time * 1000)
-    const duration = new Date(data.data.end_time - data.data.start_time * 1000)
+    console.log(data, data.trace_id)
+    const start = new Date(data.start_time * 1000)
+    const end = new Date(data.end_time * 1000)
+    const duration = new Date(data.end_time - data.start_time * 1000)
   return (
     <Card sx={{ minWidth: 275 }}>
     <div className='card'>
       <div>
-      <Typography className='name'>
-            {data.data.name}
-            </Typography>
+        <Typography className='name'>
+          {data.name}
+        </Typography>
           <div className='cardTimes'>
             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             Start: {start.toTimeString()}
@@ -31,17 +32,17 @@ export default function SpanCardComponent(data:any) {
             </Typography>
         </div>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          trace id: {data.data.trace_id}
+          trace id: {data.trace_id}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          span id: {data.data.span_id}
+          span id: {data.span_id}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          parent: {data.data.parent_id}
+          parent: {data.parent_id}
           </Typography>
       </div>
-    <div className='accordion'>
-      {data.data.attributes && <Accordion>
+    {/* <div className='accordion'>
+      {data.attributes && <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -51,11 +52,11 @@ export default function SpanCardComponent(data:any) {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            {data.data.attributes}
+            {data.attributes}
           </Typography>
         </AccordionDetails>
       </Accordion> }
-      {data.data.resource_attributes && <Accordion>
+      {data.resource_attributes && <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2a-content"
@@ -65,11 +66,11 @@ export default function SpanCardComponent(data:any) {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-          {data.data.resource_attributes}
+          {data.resource_attributes}
           </Typography>
         </AccordionDetails>
       </Accordion>}
-    </div>
+    </div> */}
     </div>
     </Card>
   );
