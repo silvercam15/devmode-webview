@@ -37,17 +37,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 import { Pagination } from "@mui/material";
 import * as React from "react";
 import axios from "axios";
-import SpanCardComponent from "../spanCard/dist/spanCardComponent";
-import './spanPageContents.css';
-var testData = require('./testData.json');
+import SpanCardComponent from "../spanCard/spanCardComponent";
+import "./spanPageContents.css";
+var testData = require("./testData.json");
 var useEffect = React.useEffect, useState = React.useState;
 export default function SpanPageContentsComponent() {
-    var _a = useState([]), spans = _a[0], setSpans = _a[1];
+    var _a = useState(testData), spans = _a[0], setSpans = _a[1];
     useEffect(function () {
-        getSpans()
-            .then(function (data) { return JSON.parse(data); })
-            .then(function (spans) { return setSpans(spans); })
-            .catch(function (err) { return setSpans(testData); });
+        getSpans().then(function (spans) { return setSpans(spans); });
     }, []);
     function getSpans() {
         return __awaiter(this, void 0, void 0, function () {
@@ -59,7 +56,7 @@ export default function SpanPageContentsComponent() {
                         result = _a.sent();
                         console.log("got spans from api!");
                         console.log(result.data);
-                        return [2 /*return*/, result.data];
+                        return [2 /*return*/, Object.values(result.data)];
                 }
             });
         });

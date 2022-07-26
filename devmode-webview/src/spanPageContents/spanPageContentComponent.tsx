@@ -1,7 +1,7 @@
 import { Pagination } from "@mui/material";
 import * as React from "react";
 import axios from "axios";
-import SpanCardComponent from "../spanCard/dist/spanCardComponent";
+import SpanCardComponent from "../spanCard/spanCardComponent";
 import "./spanPageContents.css";
 const testData = require("./testData.json");
 const { useEffect, useState } = React;
