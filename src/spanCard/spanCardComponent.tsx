@@ -5,10 +5,11 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Span from "../models/span";
 import "./styles.css";
 
-export default function SpanCardComponent(data: any) {
-  const cardData = data.data;
+export default function SpanCardComponent({ span }: { span: Span }) {
+  const cardData = span;
   console.log(cardData);
   const start = new Date(cardData.start_time * 1000);
   const end = new Date(cardData.end_time * 1000);
@@ -81,7 +82,7 @@ export default function SpanCardComponent(data: any) {
                 {Object.values(cardData.resource_attributes).map(
                   (attribute: any) => (
                     <Typography>{attribute}</Typography>
-                  )
+                  ),
                 )}
               </AccordionDetails>
             </Accordion>
